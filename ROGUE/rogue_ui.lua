@@ -25260,7 +25260,7 @@ end
                                     description = description,
                                     color = 0xff3679,
                                     thumbnail = {
-                                        url = "https://innerspeaker.org/file/thaumiel/rawvexlin.png"
+                                        url = "https://static.wikia.nocookie.net/rogue-lineage/images/d/d8/PhiloRender.png/revision/latest?cb=20251012003300"
                                     },
                                     footer = {
                                         text = string.format("Players: %d/23 | Job: %s", player_count, game.JobId)
@@ -25307,7 +25307,7 @@ end
                                         description = log_description,
                                         color = 0xff3679,
                                         thumbnail = {
-                                            url = "https://static.wikia.nocookie.net/rogue-lineage/images/d/d8/PhiloRender.png/revision/latest?cb=20251012003300"
+                                            url = "https://innerspeaker.org/file/thaumiel/rawvexlin.png"
                                         },
                                         footer = {
                                             text = string.format("Players: %d/23 | %s | Job: %s", player_count, plr.Name, game.JobId)
