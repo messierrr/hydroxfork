@@ -1,4 +1,5 @@
-local DEFAULT_RAW = getgenv().hydroxide_raw or "https://git.fable.bz/zyu/hydroxide/raw/branch/main/"
+-- local DEFAULT_RAW = getgenv().hydroxide_raw or "https://git.fable.bz/zyu/hydroxide/raw/branch/main/"
+local DEFAULT_RAW = getgenv().hydroxide_raw or "https://github.com/messierrr/hydroxfork/raw/refs/heads/main/"
 
 local gameId = game.GameId
 if gameId == 1087859240 then
