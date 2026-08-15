@@ -25137,7 +25137,6 @@ end
                             local player_count = #plrs:GetPlayers()
 
                             local server_name, server_region = get_server_info()
-                            local webhook_msg = string.format("@here")
 
                             local description = string.format("**Artifact%s:** %s\n",
                                 #artifact_names > 1 and "s" or "",
@@ -25182,7 +25181,7 @@ end
 			    end
 
                             local embed = {
-                                title = string.format("%s%s%s | ARTIFACT FOUND", ping, artifact_list, area_text),
+                                title = string.format("%s%s | ARTIFACT FOUND", artifact_list, area_text),
                                 description = description,
                                 color = 0xff3679,
                                 thumbnail = {
@@ -25193,6 +25192,8 @@ end
                                 },
                                 timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
                             }
+
+                            local webhook_msg = string.format(ping)
 
                             if cheat_client.config.webhook and cheat_client.config.webhook ~= "" then
                                 pcall(function()
