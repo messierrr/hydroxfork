@@ -13171,7 +13171,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 if stay_in_server then
                     library:Notify(string.format("Serverhop blocked (stay in server): %s", reason or "Unknown"))
                     if utility then
-                        utility:plain_webhook(string.format("@here Serverhop blocked (stay in server): %s", reason or "Unknown"))
+                        utility:plain_webhook(string.format("Serverhop blocked (stay in server): %s", reason or "Unknown"))
                     end
                     return
                 end
@@ -13426,7 +13426,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 if not serverhop_success then
                     library:Notify("!! SERVERHOP FAILED - retrying... !!")
                     if utility then
-                        utility:plain_webhook("@here SERVERHOP FAILED - retrying serverhop...")
+                        utility:plain_webhook("SERVERHOP FAILED - retrying serverhop...")
                     end
 
                     pcall(function()
@@ -13440,7 +13440,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                         if character and cs:HasTag(character, "Danger") then
                             library:Notify("!! SERVERHOP FAILED - In combat, waiting for danger to clear !!")
-                            utility:plain_webhook("@here SERVERHOP FAILED - In combat, waiting for danger to clear then retrying")
+                            utility:plain_webhook("SERVERHOP FAILED - In combat, waiting for danger to clear then retrying")
 
                             local danger_cleared = false
                             local danger_connection
@@ -13470,7 +13470,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             local final_serverhop = utility:Serverhop()
                             if not final_serverhop then
                                 library:Notify("!! SERVERHOP STILL FAILED after danger cleared - kicking !!")
-                                utility:plain_webhook("@here SERVERHOP FAILED even after danger cleared - kicking for safety")
+                                utility:plain_webhook("SERVERHOP FAILED even after danger cleared - kicking for safety")
                                 task.wait(0.5)
                                 plr:Kick("Serverhop failed after danger cleared - Kicked for safety.")
                             end
@@ -13939,7 +13939,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                         library:Notify(string.format("!! FIMBULVETR/MANUS DEI detected %.0f studs away !!", distance))
 
                                         if utility then
-                                            utility:plain_webhook(string.format("@everyone Fimbulvetr/Manus detected!\n\npossible opps:\n%s", player_list))
+                                            utility:plain_webhook(string.format("Fimbulvetr/Manus detected!\n\npossible opps:\n%s", player_list))
                                         end
 
                                         SafeServerhop(string.format("Fimbulvetr/Manus Dei detected %.0f studs away", distance))
@@ -16130,7 +16130,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                 if kick_after_path then
                     library:Notify(string.format("Reached last point! Kicking for %s...", kick_trinket_name))
-                    utility:plain_webhook(string.format("@here Reached last point after picking up %s - Kicking now", kick_trinket_name))
+                    utility:plain_webhook(string.format("@everyone Reached last point after picking up %s - Kicking now", kick_trinket_name))
                     task.wait(0.5)
                     plr:Kick(string.format("%s picked up (completed path to last point)", kick_trinket_name))
                     return
@@ -25175,9 +25175,9 @@ end
 				["Howler Friend"] = "<@&1538143671566999552>",
 			    }
 
-			    local ping = ""
+			    local ping_msg = ""
 			    for n = 1, #artifact_names do
-				ping = ping .. tostring(pings[artifact_names[n]]) .. " "
+				ping_msg = ping_msg .. tostring(pings[artifact_names[n]]) .. " "
 			    end
 
                             local embed = {
@@ -25193,13 +25193,13 @@ end
                                 timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
                             }
 
-                            local webhook_msg = string.format(ping)
+                            -- local webhook_msg = string.format(ping_msg)
 
                             if cheat_client.config.webhook and cheat_client.config.webhook ~= "" then
                                 pcall(function()
                                     HXD_SEND_WEBHOOK(cheat_client.config.webhook, {
                                         username = cheat_client.config.webhook_username or "bladee",
-                                        content = webhook_msg,
+                                        content = ping_msg,
                                         embeds = {embed}
                                     })
                                 end)
