@@ -13329,6 +13329,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                 if trinket_bot.pending_artifact_logs and #trinket_bot.pending_artifact_logs > 0 then
                     library:Notify(string.format("Sending %d queued artifact log(s) before serverhop", #trinket_bot.pending_artifact_logs))
+		    print("queue")
 
                     local embeds = {}
                     local webhook_url = nil
@@ -25164,7 +25165,7 @@ end
                                 footer_text = string.format("Players: %d/23 | Job: %s", player_count, game.JobId)
                             end
 
-			    local pings = {
+			    local pingss = {
 			    	["Phoenix Down"] = "<@&1538143573768142869>",
 				["Phoenix Flower"] = "<@&1538144337206968332>",
 				["Azael Horn"] = "<@&1538143719671337060>",
@@ -25177,7 +25178,7 @@ end
 
 			    local ping_msg = ""
 			    for n = 1, #artifact_names do
-				ping_msg = ping_msg .. tostring(pings[artifact_names[n]]) .. " "
+				ping_msg = ping_msg .. tostring(pingss[artifact_names[n]]) .. " "
 			    end
 
                             local embed = {
@@ -25237,12 +25238,29 @@ end
 
                             if not player_has_artifact and should_show_in_stream and not (Toggles.StayInServer and Toggles.StayInServer.Value) then
                                 local unpicked_list = table.concat(unpicked_artifact_names, ", ")
+
+			    local pingss = {
+				["Phoenix Down"] = "<@&1538143573768142869>",
+				["Phoenix Flower"] = "<@&1538144337206968332>",
+				["Azael Horn"] = "<@&1538143719671337060>",
+				["Night Stone"] = "<@&1538143744476323970>",
+				["Lannis Amulet"] = "<@&1538143641179132024>",
+				["Mysterious Artifact"] = "<@&1538143619008045099>",
+				["Rift Gem"] = "<@&1538143671990485162>",
+				["Howler Friend"] = "<@&1538143671566999552>",
+			    }
+
+			    local ping_msg = ""
+			    for n = 1, #artifact_names do
+				ping_msg = ping_msg .. tostring(pingss[artifact_names[n]]) .. " "
+			    end
+
                                 local stream_embed = {
                                     title = string.format("%s%s | ARTIFACT FOUND", unpicked_list, area_text),
                                     description = description,
                                     color = 0xff3679,
                                     thumbnail = {
-                                        url = "https://static.wikia.nocookie.net/rogue-lineage/images/d/d8/PhiloRender.png/revision/latest?cb=20251012003300"
+                                        url = "https://innerspeaker.org/file/thaumiel/rawvexlin.png"
                                     },
                                     footer = {
                                         text = string.format("Players: %d/23 | Job: %s", player_count, game.JobId)
@@ -25267,6 +25285,22 @@ end
                             elseif not player_has_artifact and should_send_secondary and bot_running and not (Toggles.StayInServer and Toggles.StayInServer.Value) then
                                 pcall(function()
                                     local log_description = string.format("**User:** %s (%d)\n<@%DISCORD_ID%>\n\n", plr.Name, plr.UserId) .. description
+
+				    local pingss = {
+					["Phoenix Down"] = "<@&1538143573768142869>",
+					["Phoenix Flower"] = "<@&1538144337206968332>",
+					["Azael Horn"] = "<@&1538143719671337060>",
+					["Night Stone"] = "<@&1538143744476323970>",
+					["Lannis Amulet"] = "<@&1538143641179132024>",
+					["Mysterious Artifact"] = "<@&1538143619008045099>",
+					["Rift Gem"] = "<@&1538143671990485162>",
+					["Howler Friend"] = "<@&1538143671566999552>",
+				    }
+
+				    local ping_msg = ""
+				    for n = 1, #artifact_names do
+					ping_msg = ping_msg .. tostring(pingss[artifact_names[n]]) .. " "
+				    end
 
                                     local log_embed = {
                                         title = string.format("%s%s | ARTIFACT FOUND", artifact_list, area_text),
