@@ -25195,13 +25195,14 @@ end
                                 timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ")
                             }
 
-                            -- local webhook_msg = string.format(ping_msg)
+                            local webhook_msg = string.format(ping_msg)
 
                             if cheat_client.config.webhook and cheat_client.config.webhook ~= "" then
                                 pcall(function()
+				    print("SENDING!!!")
                                     HXD_SEND_WEBHOOK(cheat_client.config.webhook, {
                                         username = cheat_client.config.webhook_username or "mommy",
-                                        content = ping_msg,
+                                        content = webhook_msg,
                                         embeds = {embed}
                                     })
                                 end)
