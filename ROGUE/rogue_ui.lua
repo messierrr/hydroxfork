@@ -3069,7 +3069,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             warn("[SERVERHOP FALLBACK] No non-full servers available at all")
                         end
 
-                        utility:plain_webhook("@here SERVERHOP FAILED: All servers full or unavailable after 24 attempts. Kicking bot. if this happens dm zyu")
+                        utility:plain_webhook("<@&1538183783289847898> SERVERHOP FAILED: All servers full or unavailable after 24 attempts. Kicking bot. if this happens dm zyu")
                         task.wait(0.5)
                         plr:Kick("Serverhop failed, dm zyu if this occurs [1]")
                     else
@@ -7000,7 +7000,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             library:Notify(string.format("!! MODERATOR %s ENCOUNTERED %d TIMES - KICKING !!", mod_name, encounter_count))
 
                             if utility then
-                                utility:plain_webhook(string.format("@everyone Encountered moderator %s again after serverhop, kicking", mod_name))
+                                utility:plain_webhook(string.format("<@&1538183783289847898> Encountered moderator %s again after serverhop, kicking", mod_name))
                             end
 
                             task.wait(0.5)
@@ -7284,7 +7284,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                             if encounter_count >= 2 then
                                 library:Notify(string.format("!! MODERATOR %s ENCOUNTERED %d TIMES - KICKING !!", mod_name, encounter_count))
-                                utility:plain_webhook(string.format("@everyone Encountered moderator %s again after serverhop during auto-restart, kicking", mod_name))
+                                utility:plain_webhook(string.format("<@&1538183783289847898> Encountered moderator %s again after serverhop during auto-restart, kicking", mod_name))
                                 task.wait(0.5)
                                 plr:Kick(string.format("Moderator %s encountered %d times during day farm auto-restart", mod_name, encounter_count))
                             else
@@ -13481,7 +13481,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                         library:Notify("!! SERVERHOP RETRY FAILED - kicking for safety !!")
                         if utility then
-                            utility:plain_webhook("@here SERVERHOP RETRY FAILED - kicking for safety")
+                            utility:plain_webhook("<@&1538183783289847898> SERVERHOP RETRY FAILED - kicking for safety")
                         end
                         task.wait(0.5)
                         plr:Kick("Serverhop failed after retry - Kicked for safety.")
@@ -13632,7 +13632,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     library:Notify(string.format("!! MODERATOR %s DETECTED (encounter %d) - RESETTING & RETURNING TO MENU (stay in server) !!", mod_name, encounter_count))
 
                     if utility then
-                        utility:plain_webhook(string.format("@here Moderator %s detected (encounter %d) - Resetting character (stay in server mode)", mod_name, encounter_count))
+                        utility:plain_webhook(string.format("<@&1538183783289847898> Moderator %s detected (encounter %d) - Resetting character (stay in server mode)", mod_name, encounter_count))
                     end
 
                     if plr.Character and FindFirstChild(plr.Character, "Humanoid") then
@@ -13658,7 +13658,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     library:Notify(string.format("!! MODERATOR %s ENCOUNTERED %d TIMES - TERMINATING BOT SESSION !!", mod_name, encounter_count))
 
                     if utility then
-                        utility:plain_webhook(string.format("@everyone Encountered moderator %s over %d serverhops, terminating bot session", mod_name, encounter_count))
+                        utility:plain_webhook(string.format("<@&1538183783289847898> Encountered moderator %s over %d serverhops, terminating bot session", mod_name, encounter_count))
                     end
 
                     task.wait(0.5)
@@ -13667,7 +13667,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     library:Notify(string.format("!! MODERATOR %s DETECTED WHILE IN DANGER - KICKING IMMEDIATELY !!", mod_name))
 
                     if utility then
-                        utility:plain_webhook(string.format("@everyone Moderator %s detected while in Danger - kicking immediately (encounter %d/3)", mod_name, encounter_count))
+                        utility:plain_webhook(string.format("<@&1538183783289847898> Moderator %s detected while in Danger - kicking immediately (encounter %d/3)", mod_name, encounter_count))
                     end
 
                     task.wait(0.5)
@@ -13777,7 +13777,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                         trinket_bot.path_running = false
                         library:Notify(string.format("Too far from first point! Distance: %.1f studs (max: 400)", distance_to_first))
                         if not test_mode and mem:HasItem("botstarted") and mem:GetItem("botstarted") == "true" then
-                            utility:plain_webhook(string.format("**BOT KICKED**: Too far from first point (%.1f studs, max: 400) @here", distance_to_first))
+                            utility:plain_webhook(string.format("**BOT KICKED**: Too far from first point (%.1f studs, max: 400) <@&1538183783289847898>", distance_to_first))
                             task.wait(1)
                             plr:Kick(string.format("Too far from first point: %.1f studs (max: 400)", distance_to_first))
                         end
@@ -13854,10 +13854,10 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                 pcall(function() library:Notify("You died (test mode - not kicking)") end)
                             elseif stay_in_server then
                                 pcall(function() library:Notify("You died (stay in server - not kicking)") end)
-                                pcall(function() utility:plain_webhook("@here bot died (stay in server mode)") end)
+                                pcall(function() utility:plain_webhook("<@&1538183783289847898> bot died (stay in server mode)") end)
                             else
                                 task.spawn(function()
-                                    pcall(function() utility:plain_webhook("@everyone bot died - kicking") end)
+                                    pcall(function() utility:plain_webhook("<@&1538183783289847898> bot died - kicking") end)
                                     task.wait(0.3)
                                     plr:Kick("bot died")
                                 end)
@@ -13866,7 +13866,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     else
                         trinket_bot.path_running = false
                         if not test_mode and mem:HasItem("botstarted") and mem:GetItem("botstarted") == "true" then
-                            utility:plain_webhook("@everyone CRITICAL: Humanoid not found in ExecutePath - kicking for safety")
+                            utility:plain_webhook("<@&1538183783289847898> CRITICAL: Humanoid not found in ExecutePath - kicking for safety")
                             library:Notify("CRITICAL: Humanoid not found - kicking")
                             task.wait(0.5)
                             plr:Kick("Humanoid not found - cannot set up death protection")
@@ -13876,7 +13876,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 else
                     trinket_bot.path_running = false
                     if not test_mode and mem:HasItem("botstarted") and mem:GetItem("botstarted") == "true" then
-                        utility:plain_webhook("@everyone CRITICAL: Character not found in ExecutePath - kicking for safety")
+                        utility:plain_webhook("<@&1538183783289847898> CRITICAL: Character not found in ExecutePath - kicking for safety")
                         library:Notify("CRITICAL: Character not found - kicking")
                         task.wait(0.5)
                         plr:Kick("Character not found - cannot set up death protection")
@@ -15586,7 +15586,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             if not gate_success then
                                 library:Notify("Gate failed but staying in server - continuing path")
                                 if utility then
-                                    utility:plain_webhook(string.format("@here Gate to %s repeatedly failing (stay in server mode)", point.gate_location or "???"))
+                                    utility:plain_webhook(string.format("<@&1538183783289847898> Gate to %s repeatedly failing (stay in server mode)", point.gate_location or "???"))
                                 end
                             else
                                 current_gate_section = current_gate_section + 1
@@ -16132,7 +16132,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                 if kick_after_path then
                     library:Notify(string.format("Reached last point! Kicking for %s...", kick_trinket_name))
-                    utility:plain_webhook(string.format("@everyone Reached last point after picking up %s - Kicking now", kick_trinket_name))
+                    utility:plain_webhook(string.format("<@&1538183783289847898> Reached last point after picking up %s - Kicking now", kick_trinket_name))
                     task.wait(0.5)
                     plr:Kick(string.format("%s picked up (completed path to last point)", kick_trinket_name))
                     return
@@ -17048,23 +17048,23 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                     local stay_in_server = Toggles.StayInServer and Toggles.StayInServer.Value or false
                                     if stay_in_server then
                                         pcall(function() library:Notify("Died during auto-start (stay in server mode)") end)
-                                        pcall(function() utility:plain_webhook("@here Bot died during auto-start (stay in server mode)") end)
+                                        pcall(function() utility:plain_webhook("<@&1538183783289847898> Bot died during auto-start (stay in server mode)") end)
                                     else
                                         pcall(function() library:Notify("Died during auto-start - kicking") end)
-                                        pcall(function() utility:plain_webhook("@everyone Bot died during auto-start - kicking") end)
+                                        pcall(function() utility:plain_webhook("<@&1538183783289847898> Bot died during auto-start - kicking") end)
                                         task.wait(0.3)
                                         plr:Kick("Bot died during auto-start")
                                     end
                                 end)
                             else
-                                utility:plain_webhook("@everyone CRITICAL: Humanoid not found during auto-start - kicking for safety")
+                                utility:plain_webhook("<@&1538183783289847898> CRITICAL: Humanoid not found during auto-start - kicking for safety")
                                 library:Notify("CRITICAL: Humanoid not found - kicking")
                                 task.wait(0.5)
                                 plr:Kick("Humanoid not found during auto-start")
                                 return
                             end
                         else
-                            utility:plain_webhook("@everyone CRITICAL: Character lost during auto-start - kicking for safety")
+                            utility:plain_webhook("<@&1538183783289847898> CRITICAL: Character lost during auto-start - kicking for safety")
                             library:Notify("CRITICAL: Character lost - kicking")
                             task.wait(0.5)
                             plr:Kick("Character lost during auto-start")
@@ -17077,7 +17077,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                 pcall(function() auto_start_death_connection:Disconnect() end)
                                 auto_start_death_connection = nil
                             end
-                            utility:plain_webhook("@everyone CRITICAL: No saved path found during auto-start (trinket_bot_path empty) - kicking for safety")
+                            utility:plain_webhook("<@&1538183783289847898> CRITICAL: No saved path found during auto-start (trinket_bot_path empty) - kicking for safety")
                             library:Notify("CRITICAL: No saved path found - kicking")
                             mem:RemoveItem("botstarted")
                             task.wait(0.5)
@@ -17688,7 +17688,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                 pcall(function() auto_start_death_connection:Disconnect() end)
                                 auto_start_death_connection = nil
                             end
-                            utility:plain_webhook("@everyone CRITICAL: Character lost after path load during auto-start - kicking for safety")
+                            utility:plain_webhook("<@&1538183783289847898> CRITICAL: Character lost after path load during auto-start - kicking for safety")
                             library:Notify("CRITICAL: Character lost after path load - kicking")
                             mem:RemoveItem("botstarted")
                             task.wait(0.5)
@@ -18362,7 +18362,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                 kick_after_path = true
                                 kick_trinket_name = trinket_name
                                 print(string.format("[Kick on Trinket] MATCH FOUND: %s - will kick after reaching last point", obj.Name))
-                                utility:plain_webhook(string.format("@here %s found! Going to last point then kicking.", trinket_name))
+                                utility:plain_webhook(string.format("<@&1538183783289847898> %s found! Going to last point then kicking.", trinket_name))
                                 library:Notify(string.format("%s found! Going to last point...", trinket_name))
                                 return
                             end
@@ -24387,7 +24387,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                 local has_enough = silver >= 250
                 if not has_enough and no_kick() then
-                    utility:plain_webhook(string.format("@here %s (%s) tried gacha without enough silver (250 needed, has %d)", plr.Name, plr.UserId, silver))
+                    utility:plain_webhook(string.format("<@&1538183783289847898> %s (%s) tried gacha without enough silver (250 needed, has %d)", plr.Name, plr.UserId, silver))
                     return true
                 end
 
@@ -24483,7 +24483,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 if playerDays >= day_goal then
                     if Toggles and Toggles.day_goal_kick and Toggles.day_goal_kick.Value then
                         if no_kick() then
-                            utility:plain_webhook(string.format("@here %s (%s) reached day goal: %d (no_kick enabled, not kicking)", plr.Name, plr.UserId, playerDays))
+                            utility:plain_webhook(string.format("<@&1538183783289847898> %s (%s) reached day goal: %d (no_kick enabled, not kicking)", plr.Name, plr.UserId, playerDays))
                         else
                             kickPlayer(string.format("%s reached day goal: %d", plr.Name, plr.UserId, playerDays))
                         end
