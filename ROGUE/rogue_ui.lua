@@ -25185,7 +25185,7 @@ end
                                 description = description,
                                 color = 0xff3679,
                                 thumbnail = {
-                                    url = "https://static.wikia.nocookie.net/rogue-lineage/images/d/d8/PhiloRender.png/revision/latest?cb=20251012003300"
+                                    url = "https://innerspeaker.org/file/thaumiel/rawvexlin.png"
                                 },
                                 footer = {
                                     text = footer_text
@@ -25198,7 +25198,7 @@ end
                             if cheat_client.config.webhook and cheat_client.config.webhook ~= "" then
                                 pcall(function()
                                     HXD_SEND_WEBHOOK(cheat_client.config.webhook, {
-                                        username = cheat_client.config.webhook_username or "bladee",
+                                        username = cheat_client.config.webhook_username or "mommy",
                                         content = ping_msg,
                                         embeds = {embed}
                                     })
