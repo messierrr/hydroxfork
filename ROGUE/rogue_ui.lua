@@ -25175,6 +25175,7 @@ end
 				["Mysterious Artifact"] = "<@&1538143619008045099>",
 				["Rift Gem"] = "<@&1538143671990485162>",
 				["Howler Friend"] = "<@&1538143671566999552>",
+				["Amulet of the White King"] = "<@&1538181542231150652>",
 			    }
 
 			    local ping_msg = ""
@@ -25250,6 +25251,7 @@ end
 				["Mysterious Artifact"] = "<@&1538143619008045099>",
 				["Rift Gem"] = "<@&1538143671990485162>",
 				["Howler Friend"] = "<@&1538143671566999552>",
+				["Amulet of the White King"] = "<@&1538181542231150652>",
 			    }
 
 			    local ping_msg = ""
@@ -25297,6 +25299,7 @@ end
 					["Mysterious Artifact"] = "<@&1538143619008045099>",
 					["Rift Gem"] = "<@&1538143671990485162>",
 					["Howler Friend"] = "<@&1538143671566999552>",
+					["Amulet of the White King"] = "<@&1538181542231150652>",
 				    }
 
 				    local ping_msg = ""
