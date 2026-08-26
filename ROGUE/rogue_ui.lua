@@ -13495,7 +13495,8 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             plr:Kick("Serverhop failed after retry - Kicked for safety.")
                             break
                         end
-                        utility:plain_webhook("A kick wouldve occurred here but because this is running in khei, the kick was stopped")
+                        -- utility:plain_webhook("A kick wouldve occurred here but because this is running in khei, the kick was stopped")
+                        utility:plain_webhook("0_0 trying again instead of kicking (Khei) !!!")
                         task.wait(0.5)
                     end
                 end
