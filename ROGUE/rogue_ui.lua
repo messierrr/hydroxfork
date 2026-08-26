@@ -13439,6 +13439,10 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
 
                     serverhop_success = false
                     while not serverhop_success do
+                        pcall(function()
+                            rps.Requests.ReturnToMenu:InvokeServer()
+                        end)
+                        task.wait(1)
                         serverhop_success = utility:Serverhop()
                         if serverhop_success then break end
                         local character = plr.Character
@@ -13478,10 +13482,8 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                                 utility:plain_webhook("SERVERHOP FAILED even after danger cleared - kicking for safety")
                                 task.wait(0.5)
                                 plr:Kick("Serverhop failed after danger cleared - Kicked for safety.")
-                            else
-                                utility:plain_webhook("A kick wouldve occurred here but because this is running in khei, the kick was stopped")
+                                return
                             end
-                            return
                         end
 
                         if not is_khei then
