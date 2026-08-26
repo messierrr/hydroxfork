@@ -13437,8 +13437,10 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     end)
                     task.wait(1)
 
-                    serverhop_success = utility:Serverhop()
+                    serverhop_success = false
                     while not serverhop_success do
+                        serverhop_success = utility:Serverhop()
+                        if serverhop_success then break end
                         local character = plr.Character
 
                         if character and cs:HasTag(character, "Danger") then
