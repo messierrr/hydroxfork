@@ -13438,7 +13438,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                     task.wait(1)
 
                     serverhop_success = utility:Serverhop()
-                    if not serverhop_success then
+                    while not serverhop_success do
                         local character = plr.Character
 
                         if character and cs:HasTag(character, "Danger") then
@@ -13471,7 +13471,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             task.wait(0.1)
 
                             local final_serverhop = utility:Serverhop()
-                            if not final_serverhop then
+                            if not final_serverhop and not is_khei then
                                 library:Notify("!! SERVERHOP STILL FAILED after danger cleared - kicking !!")
                                 utility:plain_webhook("SERVERHOP FAILED even after danger cleared - kicking for safety")
                                 task.wait(0.5)
@@ -13480,12 +13480,16 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                             return
                         end
 
-                        library:Notify("!! SERVERHOP RETRY FAILED - kicking for safety !!")
-                        if utility then
-                            utility:plain_webhook("<@&1538183783289847898> SERVERHOP RETRY FAILED - kicking for safety")
+                        if not is_khei then
+                            library:Notify("!! SERVERHOP RETRY FAILED - kicking for safety !!")
+                            if utility then
+                                utility:plain_webhook("<@&1538183783289847898> SERVERHOP RETRY FAILED - kicking for safety")
+                            end
+                            task.wait(0.5)
+                            plr:Kick("Serverhop failed after retry - Kicked for safety.")
+                            break
                         end
                         task.wait(0.5)
-                        plr:Kick("Serverhop failed after retry - Kicked for safety.")
                     end
                 end
             end
