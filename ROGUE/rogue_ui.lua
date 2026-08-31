@@ -234,7 +234,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
     end
 
     local cas  = Services.ContextActionService
-    local vim  = Services.VirtualInputManager
+    local vim  = cloneref(Instance.new("VirtualInputManager"))
     local mem  = Services.MemStorageService
     local rps  = Services.ReplicatedStorage
     local cs   = Services.CollectionService
@@ -932,6 +932,24 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
             1682396718,
             1525197437,
             7486049096,
+
+            3460406967,
+            1252415255,
+            1814796338,
+            2839783319,
+            1301579831,
+            1253825419,
+            66934974,
+            8647176491,
+            332950853,
+            7749742735,
+            1148151081,
+            2297159952,
+            2612252879,
+            41377282,
+            1916909354,
+            2359491684,
+            1280266337,111084238,1769697283 ,
         },
         aimbot = {
             aimkey_translation = {
