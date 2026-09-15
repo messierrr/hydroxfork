@@ -16665,7 +16665,7 @@ if game.PlaceId == 3541987450 or game.PlaceId == 5208655184 or game.PlaceId == 1
                 Values = {
                     "Rift Gem", "Mysterious Artifact", "Phoenix Flower", "Azael Horn",
                     "Amulet of the White King", "Lannis's Amulet", "Phoenix Down", "Night Stone", "Howler Friend",
-                    "???", "Scroll", "Diamond", "Emerald", "Ruby", "Sapphire", "Ice Essence", "Bound Book",
+                    "???", "Scroll of Telorum", "Scroll of Trahere", "Diamond", "Emerald", "Ruby", "Sapphire", "Ice Essence", "Bound Book",
                     "Idol of the Forgotten", "Old Ring", "Ring", "Goblet", "Old Amulet", "Amulet", "Opal"
                 },
                 Multi = true,
